@@ -44,7 +44,9 @@ module Vacuum
     #
     # Returns nothing.
     def configure(credentials)
-      credentials.each { |key, val| self.send("#{key}=", val) }
+      self.key= ENV["AMAZON_API_KEY"] || raise "No Api key"
+      self.secret = ENV["AMAZON_API_SECRET"] || raise "No API ssecret"
+      self.tag = ENV["AMAZONA_API_TAG"] || raise "No API tag"
     end
 
     # Get the String Associate Tag.
