@@ -45,9 +45,9 @@ module Vacuum
     #
     # Returns nothing.
     def configure
-      @key= ENV["AMAZON_API_KEY"] 
-      @secret = ENV["AMAZON_API_SECRET"] 
-      @tag = ENV["AMAZONA_API_TAG"] 
+      self.send("key=", ENV["AMAZON_API_KEY"] )
+      self.send("secret=",  ENV["AMAZON_API_SECRET"] )
+      self.send("tag=", ENV["AMAZONA_API_TAG"] )
       return self
     end
 
