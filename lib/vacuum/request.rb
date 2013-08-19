@@ -33,6 +33,7 @@ module Vacuum
     def initialize(locale = nil)
       host = HOSTS[locale || 'US'] or raise BadLocale
       self.endpoint = "http://#{host}/onca/xml"
+      self.configure
     end
 
     # Configure the Amazon Product Advertising API request.
@@ -47,6 +48,7 @@ module Vacuum
       self.key= ENV["AMAZON_API_KEY"] || raise "No Api key"
       self.secret = ENV["AMAZON_API_SECRET"] || raise "No API ssecret"
       self.tag = ENV["AMAZONA_API_TAG"] || raise "No API tag"
+      return self
     end
 
     # Get the String Associate Tag.
