@@ -44,7 +44,7 @@ module Vacuum
     #               :tag    - The String Associate Tag.
     #
     # Returns nothing.
-    def configure(credentials)
+    def configure
       self.key= ENV["AMAZON_API_KEY"] 
       self.secret = ENV["AMAZON_API_SECRET"] 
       self.tag = ENV["AMAZONA_API_TAG"] 
